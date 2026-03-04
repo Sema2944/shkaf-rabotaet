@@ -6,7 +6,7 @@
     <title>Шкаф работает — AI-стилист из твоего гардероба</title>
     <meta name="description" content="AI-бот в Telegram, который собирает образы из твоих реальных вещей за 30 секунд. Не из Pinterest — из твоего шкафа.">
     <meta property="og:title" content="Шкаф работает — AI-стилист из твоего гардероба">
-    <meta property="og:description" content="Образы из твоих вещей за 30 секунд. Telegram-бот с AI.">
+    <meta property="og:description" content="AI-стилист в Telegram. 3 образа бесплатно. Из твоих реальных вещей за 30 секунд.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -727,6 +727,88 @@
             font-size: 17px;
         }
 
+        .cta-note {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .cta-note strong {
+            color: var(--accent-dark);
+        }
+
+        /* ============================================
+           6.5. FAQ
+           ============================================ */
+        .faq {
+            padding: 100px 0;
+            background: var(--bg);
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 24px 0;
+            font-family: var(--sans);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover { color: var(--accent-dark); }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(196,149,106,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-dark);
+            font-size: 18px;
+            font-weight: 400;
+            transition: transform 0.3s, background 0.2s;
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: rgba(196,149,106,0.2);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 24px;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
         /* ============================================
            7. FINAL CTA
            ============================================ */
@@ -784,6 +866,7 @@
             margin-top: 40px;
             font-size: 14px;
             color: var(--text-light);
+            line-height: 2;
         }
 
         .final-footer a {
@@ -794,6 +877,56 @@
 
         .final-footer a:hover {
             text-decoration: underline;
+        }
+
+        .footer-copy {
+            margin-top: 4px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           STICKY MOBILE CTA
+           ============================================ */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 12px 16px 20px;
+            background: linear-gradient(to top, var(--bg) 70%, transparent);
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.4s, transform 0.4s;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .sticky-cta a {
+            display: block;
+            text-align: center;
+            background: var(--text);
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px 24px;
+            border-radius: 60px;
+            box-shadow: 0 8px 32px rgba(44,36,32,0.25);
+            transition: background 0.2s;
+        }
+
+        .sticky-cta a:hover { background: var(--accent-dark); }
+
+        @media (max-width: 767px) {
+            .sticky-cta { display: block; }
         }
 
         /* ============================================
@@ -847,6 +980,23 @@
             .final-buttons { flex-direction: column; align-items: center; }
         }
     </style>
+
+    <!-- Яндекс.Метрика — раскомментировать после получения счётчика
+    <script type="text/javascript">
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+       ym(XXXXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    -->
 </head>
 <body>
 
@@ -856,14 +1006,14 @@
     <div class="container">
         <div class="hero-inner">
             <div class="hero-content">
-                <div class="hero-badge reveal">Telegram-бот с AI</div>
+                <div class="hero-badge reveal">3 образа бесплатно — попробуй прямо сейчас</div>
                 <h1 class="reveal reveal-delay-1">Образы из твоих вещей за&nbsp;<em>30 секунд</em></h1>
                 <p class="hero-desc reveal reveal-delay-2">
                     Сфотографируй свой гардероб — бот подберёт готовые образы
                     под любой повод. Не из Pinterest. Из твоего реального шкафа.
                 </p>
                 <div class="hero-ctas reveal reveal-delay-3">
-                    <a href="https://t.me/wardrobe_24_bot" class="btn-primary">
+                    <a href="https://t.me/wardrobe_24_bot?start=landing" class="btn-primary">
                         Попробовать бесплатно &rarr;
                     </a>
                     <a href="https://t.me/shkaf_rabotaet" class="btn-secondary">
@@ -1043,7 +1193,7 @@
         <div class="price-card reveal reveal-delay-2">
             <div class="price-top">
                 <div class="price-amount">399<span> ₽</span></div>
-                <div class="price-period">в месяц</div>
+                <div class="price-period">Первые 3 образа — бесплатно, без привязки карты</div>
                 <div class="price-trial">3 образа бесплатно</div>
             </div>
             <div class="price-features">
@@ -1053,29 +1203,90 @@
                 </div>
                 <div class="price-feature">
                     <div class="price-check">✓</div>
-                    <span>AI-анализ всех вещей: цвет, тип, сезон, стиль</span>
+                    <span>Манекен-визуализация — коллаж из твоих реальных фото</span>
                 </div>
                 <div class="price-feature">
                     <div class="price-check">✓</div>
-                    <span>Визуализация — коллаж из твоих реальных фото</span>
+                    <span>Погодный подбор — образ с учётом завтрашней погоды</span>
+                </div>
+                <div class="price-feature">
+                    <div class="price-check">✓</div>
+                    <span>Поиск по гардеробу — находи вещи мгновенно</span>
+                </div>
+                <div class="price-feature">
+                    <div class="price-check">✓</div>
+                    <span>AI-стилист — персональные советы по твоему шкафу</span>
+                </div>
+                <div class="price-feature">
+                    <div class="price-check">✓</div>
+                    <span>Утренний пуш — готовый образ до того, как откроешь шкаф</span>
                 </div>
                 <div class="price-feature">
                     <div class="price-check">✓</div>
                     <span>Объяснения — почему вещи сочетаются</span>
                 </div>
-                <div class="price-feature">
-                    <div class="price-check">✓</div>
-                    <span>Альтернативы — не нравится? Покажем другой</span>
-                </div>
-                <div class="price-feature">
-                    <div class="price-check">✓</div>
-                    <span>Учёт трендов текущего сезона</span>
-                </div>
             </div>
             <div class="price-cta">
-                <a href="https://t.me/wardrobe_24_bot" class="btn-primary">
+                <a href="https://t.me/wardrobe_24_bot?start=landing" class="btn-primary">
                     Начать бесплатно &rarr;
                 </a>
+                <p class="cta-note"><strong>3 образа бесплатно</strong> — без регистрации и привязки карты</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== 6.5. FAQ ====== -->
+<section class="faq">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label reveal">Вопросы и ответы</div>
+            <h2 class="reveal reveal-delay-1">Часто спрашивают</h2>
+        </div>
+        <div class="faq-list reveal reveal-delay-2">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Как бот узнаёт мои вещи?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner">
+                        Ты отправляешь фото каждой вещи в Telegram. AI анализирует изображение и определяет тип одежды, цвет, сезон и стиль. Всё это сохраняется в твоём личном гардеробе — и используется при подборе образов.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Мои фото хранятся на серверах?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner">
+                        Фото хранятся только в рамках Telegram — бот работает через стандартный API и не копирует изображения на сторонние серверы. Твой гардероб виден только тебе.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Что будет после 3 бесплатных образов?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner">
+                        После 3 бесплатных образов бот предложит оформить подписку за 399 ₽ в месяц. Никакой привязки карты заранее — ты сам решаешь, когда и нужно ли платить. Гардероб и все загруженные вещи остаются у тебя.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Работает ли бот для мужчин?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" role="region">
+                    <div class="faq-answer-inner">
+                        Да! Бот подбирает образы для любого гардероба — мужского, женского или смешанного. AI ориентируется на конкретные вещи, а не на пол пользователя.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1089,7 +1300,7 @@
             <h2 class="reveal">Хватит тратить утро на&nbsp;сомнения</h2>
             <p class="reveal reveal-delay-1">Открой бот, загрузи вещи — и пусть шкаф наконец заработает.</p>
             <div class="final-buttons reveal reveal-delay-2">
-                <a href="https://t.me/wardrobe_24_bot" class="btn-primary">
+                <a href="https://t.me/wardrobe_24_bot?start=landing" class="btn-primary">
                     Открыть бот &rarr;
                 </a>
                 <a href="https://t.me/shkaf_rabotaet" class="btn-secondary">
@@ -1098,11 +1309,18 @@
             </div>
             <div class="final-footer reveal reveal-delay-3">
                 <a href="https://t.me/shkaf_rabotaet">@shkaf_rabotaet</a> &nbsp;·&nbsp;
-                <a href="https://t.me/wardrobe_24_bot">@wardrobe_24_bot</a>
+                <a href="https://t.me/wardrobe_24_bot?start=landing">@wardrobe_24_bot</a> &nbsp;·&nbsp;
+                <a href="mailto:shkaf.rabotaet@gmail.com">Написать нам</a>
+                <p class="footer-copy">Контакт: shkaf.rabotaet@gmail.com</p>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="stickyCta">
+    <a href="https://t.me/wardrobe_24_bot?start=landing">✨ Попробовать бесплатно &rarr;</a>
+</div>
 
 <!-- Scroll reveal -->
 <script>
@@ -1115,6 +1333,41 @@
         });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
+            const isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                openItem.classList.remove('open');
+                openItem.querySelector('.faq-answer').style.maxHeight = '0';
+                openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked if was closed
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Sticky mobile CTA (appears after 400px scroll, only on <768px)
+    const stickyCta = document.getElementById('stickyCta');
+    if (stickyCta && window.innerWidth < 768) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        }, { passive: true });
+    }
 </script>
 
 </body>
