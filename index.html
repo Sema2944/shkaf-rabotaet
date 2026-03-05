@@ -981,22 +981,18 @@
         }
     </style>
 
-    <!-- Яндекс.Метрика — раскомментировать после получения счётчика
+    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-       ym(XXXXXXXX, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107151124', 'ym');
+        ym(107151124, 'init', {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/107151124" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -1367,6 +1363,33 @@
                 stickyCta.classList.remove('visible');
             }
         }, { passive: true });
+    }
+
+    // Отслеживание скролла до тарифа
+    const pricingSection = document.querySelector('.section-pricing');
+    if (pricingSection) {
+        const pricingObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && typeof ym !== 'undefined') {
+                    ym(107151124, 'reachGoal', 'scroll_to_pricing');
+                    pricingObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        pricingObserver.observe(pricingSection);
+    }
+
+    const faqSection = document.querySelector('.section-faq');
+    if (faqSection) {
+        const faqObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && typeof ym !== 'undefined') {
+                    ym(107151124, 'reachGoal', 'scroll_to_faq');
+                    faqObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        faqObserver.observe(faqSection);
     }
 </script>
 
