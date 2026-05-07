@@ -1245,6 +1245,364 @@
             color: var(--text-muted);
             cursor: pointer;
         }
+
+        /* ===== TESTIMONIALS (эмоциональная + социальная JTBD) ===== */
+        .section-testimonials {
+            padding: 100px 32px;
+            background: var(--bg-deep);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .testimonials-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+        .testimonials-head {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px -20px rgba(26, 26, 26, 0.15);
+        }
+        .testimonial-quote {
+            font-family: var(--serif);
+            font-size: 1.25rem;
+            line-height: 1.45;
+            color: var(--text);
+            font-style: italic;
+        }
+        .testimonial-quote::before {
+            content: '\201C';
+            color: var(--accent);
+            font-size: 2.4rem;
+            line-height: 0;
+            margin-right: 4px;
+            vertical-align: -0.4em;
+        }
+        .testimonial-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: auto;
+        }
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        .testimonial-role {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .testimonial-tag {
+            align-self: flex-start;
+            background: var(--accent-glow);
+            color: var(--accent-dark);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 6px 12px;
+            border-radius: 999px;
+        }
+
+        /* ===== BEFORE / AFTER ===== */
+        .section-before-after {
+            padding: 100px 32px;
+        }
+        .ba-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .ba-head {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .ba-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: stretch;
+            gap: 24px;
+        }
+        .ba-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ba-card--before {
+            background: #F5F1EA;
+        }
+        .ba-card--after {
+            background: linear-gradient(160deg, var(--white), var(--bg));
+            border-color: rgba(200, 168, 130, 0.5);
+            box-shadow: 0 24px 60px -30px rgba(160, 125, 90, 0.35);
+        }
+        .ba-label {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-light);
+            margin-bottom: 14px;
+        }
+        .ba-card--after .ba-label {
+            color: var(--accent-dark);
+        }
+        .ba-headline {
+            font-family: var(--serif);
+            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .ba-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .ba-list li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .ba-list li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--text-light);
+            flex-shrink: 0;
+            margin-top: 9px;
+        }
+        .ba-card--after .ba-list li::before {
+            background: var(--accent-dark);
+        }
+        .ba-arrow {
+            display: grid;
+            place-items: center;
+            width: 64px;
+        }
+        .ba-arrow-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            box-shadow: 0 12px 24px -8px rgba(160, 125, 90, 0.5);
+        }
+        .ba-time {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+            font-family: var(--serif);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin: 6px 0 14px;
+        }
+        .ba-time small {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            font-family: var(--sans);
+        }
+        .ba-card--before .ba-time {
+            color: var(--text-muted);
+        }
+
+        /* ===== OCCASIONS — социальная работа ===== */
+        .section-occasions {
+            padding: 100px 32px;
+            background: var(--dark);
+            color: var(--white);
+        }
+        .occasions-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+        .occasions-head {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .occasions-head .section-label {
+            color: var(--accent);
+        }
+        .occasions-head .section-title {
+            color: var(--white);
+        }
+        .occasions-head .section-title em {
+            color: var(--accent);
+        }
+        .occasions-sub {
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 12px;
+            font-size: 1.05rem;
+        }
+        .occasions-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .occasion-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .occasion-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--accent);
+        }
+        .occasion-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--accent-glow);
+            display: grid;
+            place-items: center;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+        }
+        .occasion-title {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .occasion-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        /* ===== Обновлённый FOOTER (колонки + ссылки на legal) ===== */
+        footer {
+            text-align: left;
+        }
+        .footer-grid {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+        .footer-brand .footer-logo { margin-bottom: 10px; }
+        .footer-tagline {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            max-width: 280px;
+        }
+        .footer-col h4 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        .footer-col-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-col-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-col-links a:hover { color: var(--accent-dark); }
+        .footer-bottom {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+            .ba-grid {
+                grid-template-columns: 1fr;
+            }
+            .ba-arrow {
+                width: 100%;
+                justify-self: center;
+            }
+            .ba-arrow-circle { transform: rotate(90deg); }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px 24px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .section-testimonials,
+            .section-before-after,
+            .section-occasions { padding: 72px 20px; }
+            .occasions-grid { grid-template-columns: 1fr; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                justify-content: flex-start;
+                flex-direction: column;
+                gap: 6px;
+            }
+            footer { padding: 48px 24px; }
+        }
     </style>
 
     <!-- Yandex.Metrika counter -->
@@ -1382,6 +1740,48 @@
     </div>
 </section>
 
+<!-- BEFORE / AFTER -->
+<section class="section-before-after">
+    <div class="ba-inner">
+        <div class="ba-head reveal">
+            <span class="section-label">До и после</span>
+            <h2 class="section-title">Хватит гадать, что надеть.<br><em>Просто открой бота.</em></h2>
+        </div>
+
+        <div class="ba-grid">
+            <div class="ba-card ba-card--before reveal reveal-delay-1">
+                <div class="ba-label">До</div>
+                <div class="ba-headline">Каждое утро —<br>паника у&nbsp;шкафа</div>
+                <div class="ba-time">30 <small>минут на сборы</small></div>
+                <ul class="ba-list">
+                    <li>Перемеряла половину гардероба</li>
+                    <li>На&nbsp;полу — гора отложенных вещей</li>
+                    <li>В&nbsp;итоге снова та&nbsp;же футболка</li>
+                    <li>На&nbsp;работу — с&nbsp;ощущением «опять не&nbsp;то»</li>
+                </ul>
+            </div>
+
+            <div class="ba-arrow reveal reveal-delay-2" aria-hidden="true">
+                <div class="ba-arrow-circle">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+            </div>
+
+            <div class="ba-card ba-card--after reveal reveal-delay-3">
+                <div class="ba-label">После</div>
+                <div class="ba-headline">Загрузила вещи&nbsp;—<br>и&nbsp;спокойно собралась</div>
+                <div class="ba-time">5 <small>минут — и я готова</small></div>
+                <ul class="ba-list">
+                    <li>AI собрал образ из&nbsp;того, что уже висит</li>
+                    <li>Учёл погоду и&nbsp;повод (офис, свидание)</li>
+                    <li>Не&nbsp;тратишь силы на&nbsp;«а&nbsp;вдруг не&nbsp;то?»</li>
+                    <li>Выходишь из&nbsp;дома уверенной</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- DIFFERENCE -->
 <section class="section-diff">
     <div class="diff-inner">
@@ -1425,6 +1825,55 @@
                 </div>
                 <p class="diff-card-desc">Работает с тем, что уже есть в твоём шкафу. В Telegram — без новых приложений. Образ за 30 секунд. Учитывает повод, сезон и твои предпочтения.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<!-- TODO: заменить тексты и инициалы на реальные отзывы пользователей -->
+<section class="section-testimonials">
+    <div class="testimonials-inner">
+        <div class="testimonials-head reveal">
+            <span class="section-label">Что говорят</span>
+            <h2 class="section-title">Не&nbsp;стало стресса —<br><em>и заметили окружающие</em></h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <article class="testimonial-card reveal reveal-delay-1">
+                <span class="testimonial-tag">Эмоция</span>
+                <p class="testimonial-quote">Раньше я тратила 30&nbsp;минут на&nbsp;сборы и&nbsp;всё равно выходила недовольная. Теперь&nbsp;— 5&nbsp;минут, и&nbsp;я&nbsp;спокойна за&nbsp;то, как&nbsp;выгляжу.</p>
+                <div class="testimonial-meta">
+                    <div class="testimonial-avatar" aria-hidden="true">АК</div>
+                    <div>
+                        <div class="testimonial-name">Анна К.</div>
+                        <div class="testimonial-role">маркетолог, Москва</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card reveal reveal-delay-2">
+                <span class="testimonial-tag">Социальная</span>
+                <p class="testimonial-quote">Коллеги стали говорить, что я будто обновила гардероб. Хотя я просто начала носить то, что уже было&nbsp;— но в&nbsp;нужных сочетаниях.</p>
+                <div class="testimonial-meta">
+                    <div class="testimonial-avatar" aria-hidden="true">МС</div>
+                    <div>
+                        <div class="testimonial-name">Марина С.</div>
+                        <div class="testimonial-role">продакт-менеджер</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="testimonial-card reveal reveal-delay-3">
+                <span class="testimonial-tag">Уверенность</span>
+                <p class="testimonial-quote">На&nbsp;первое свидание после развода я&nbsp;шла спокойно: бот собрал образ под кафе и&nbsp;погоду, я&nbsp;не&nbsp;переживала за&nbsp;внешний вид и&nbsp;могла думать о&nbsp;человеке.</p>
+                <div class="testimonial-meta">
+                    <div class="testimonial-avatar" aria-hidden="true">ЕД</div>
+                    <div>
+                        <div class="testimonial-name">Екатерина Д.</div>
+                        <div class="testimonial-role">дизайнер, СПб</div>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </section>
@@ -1482,6 +1931,40 @@
                 Попробовать бесплатно
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- OCCASIONS — социальная JTBD: «выглядеть стильно в глазах других» -->
+<section class="section-occasions">
+    <div class="occasions-inner">
+        <div class="occasions-head reveal">
+            <span class="section-label">С кем угодно — в своей тарелке</span>
+            <h2 class="section-title">Стань тем, кто <em>всегда одет со&nbsp;вкусом</em></h2>
+            <p class="occasions-sub">Один и&nbsp;тот&nbsp;же шкаф — но&nbsp;каждый раз попадание в&nbsp;ситуацию.</p>
+        </div>
+
+        <div class="occasions-grid">
+            <div class="occasion-card reveal reveal-delay-1">
+                <div class="occasion-icon" aria-hidden="true">🏢</div>
+                <div class="occasion-title">Офис&nbsp;и&nbsp;созвоны</div>
+                <p class="occasion-text">Собранно, без&nbsp;«я&nbsp;опять как&nbsp;вчера». Коллеги начнут замечать.</p>
+            </div>
+            <div class="occasion-card reveal reveal-delay-2">
+                <div class="occasion-icon" aria-hidden="true">💕</div>
+                <div class="occasion-title">Свидание</div>
+                <p class="occasion-text">Уверенно, женственно, под&nbsp;место. На&nbsp;себе — не&nbsp;на&nbsp;вешалке в&nbsp;Pinterest.</p>
+            </div>
+            <div class="occasion-card reveal reveal-delay-3">
+                <div class="occasion-icon" aria-hidden="true">☕</div>
+                <div class="occasion-title">Прогулка</div>
+                <p class="occasion-text">Кэжуал, который не&nbsp;стыдно сфоткать. Под&nbsp;погоду, без&nbsp;промахов.</p>
+            </div>
+            <div class="occasion-card reveal reveal-delay-4">
+                <div class="occasion-icon" aria-hidden="true">🥂</div>
+                <div class="occasion-title">Вечеринка</div>
+                <p class="occasion-text">Заметно, но&nbsp;не&nbsp;через&nbsp;край. Ты&nbsp;— главное украшение, не&nbsp;аутфит.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -1551,15 +2034,36 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-logo">ШКАФ <span>РАБОТАЕТ</span></div>
-    <div class="footer-links">
-        <a href="https://t.me/wardrobe_24_bot?start=landing" target="_blank">Бот</a>
-        <a href="https://t.me/shkaf_rabotaet" target="_blank">Канал</a>
-        <a href="https://telegra.ph/AI-stilist-kotoryj-rabotaet-s-tvoim-shkafom-02-20" target="_blank">О проекте</a>
-        <a href="/cdn-cgi/l/email-protection#89fae1e2e8efa7fbe8ebe6fde8ecfdc9eee4e8e0e5a7eae6e4">Написать нам</a>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="footer-logo">ШКАФ <span>РАБОТАЕТ</span></div>
+            <p class="footer-tagline">AI-стилист, который собирает образы из&nbsp;твоих реальных вещей. В&nbsp;Telegram и&nbsp;MAX, без&nbsp;новых приложений.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Продукт</h4>
+            <div class="footer-col-links">
+                <a href="https://t.me/wardrobe_24_bot?start=landing" target="_blank" rel="noopener">Telegram-бот</a>
+                <a href="https://max.ru/id330407633004_2_bot" target="_blank" rel="noopener">MAX-бот</a>
+                <a href="https://t.me/shkaf_rabotaet" target="_blank" rel="noopener">Канал @shkaf_rabotaet</a>
+                <a href="https://telegra.ph/AI-stilist-kotoryj-rabotaet-s-tvoim-shkafom-02-20" target="_blank" rel="noopener">О проекте</a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Правовое</h4>
+            <div class="footer-col-links">
+                <a href="/privacy.html">Политика конфиденциальности</a>
+                <a href="/requisites.html">Реквизиты</a>
+                <a href="/feedback.html">Обратная связь</a>
+            </div>
+        </div>
     </div>
-    <p class="footer-copy">© 2026 Шкаф Работает. AI-стилист в Telegram.</p>
-    <p class="footer-copy" style="margin-top: 8px;">Контакт: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b2833303a3d75293a39342f3a3e2f1b3c363a323775383436">[email&#160;protected]</a> · <!-- ИНН: ХХХХХХХХХХ --></p>
+
+    <div class="footer-bottom">
+        <span>© 2026 Шкаф Работает. AI-стилист в Telegram и MAX.</span>
+        <span>Контакт: <a href="mailto:hello@shkaf-rabotaet.ru" style="color:inherit;">hello@shkaf-rabotaet.ru</a></span>
+    </div>
 </footer>
 
 <!-- MESSENGER CHOICE MODAL -->
@@ -1587,7 +2091,7 @@
     <span class="sticky-sub">3 образа без оплаты</span>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

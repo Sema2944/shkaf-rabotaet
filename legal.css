@@ -1,0 +1,296 @@
+/* legal.css — единый стиль для privacy/requisites/feedback и любых
+   статических юридических страниц. Использует те же CSS-переменные
+   и шрифты, что главный лендинг index.html, чтобы выглядеть как часть сайта. */
+
+:root {
+    --bg: #FAF7F2;
+    --bg-deep: #F0EBE3;
+    --text: #1A1A1A;
+    --text-muted: #6B6560;
+    --text-light: #9B9590;
+    --accent: #C8A882;
+    --accent-dark: #A07D5A;
+    --accent-glow: rgba(200, 168, 130, 0.15);
+    --white: #FFFFFF;
+    --dark: #1A1A1A;
+    --dark-soft: #2D2926;
+    --border: rgba(26, 26, 26, 0.08);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Manrope', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+a { color: var(--accent-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== TOP BAR ===== */
+.legal-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.95);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.legal-nav__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.legal-nav__logo {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: var(--dark);
+}
+
+.legal-nav__logo span {
+    color: var(--accent-dark);
+    font-style: italic;
+}
+
+.legal-nav__back {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+.legal-nav__back:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+/* ===== CONTENT ===== */
+.legal-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+}
+
+.legal-content h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.legal-content .legal-meta {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+.legal-content h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 600;
+    margin: 36px 0 12px;
+    letter-spacing: -0.005em;
+}
+
+.legal-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 24px 0 8px;
+}
+
+.legal-content p {
+    margin-bottom: 14px;
+    color: var(--text);
+}
+
+.legal-content ul,
+.legal-content ol {
+    margin: 8px 0 16px 24px;
+    color: var(--text);
+}
+
+.legal-content li {
+    margin-bottom: 6px;
+}
+
+.legal-content strong { font-weight: 600; }
+
+/* Карточка для блока контактов / реквизитов */
+.legal-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 28px;
+    margin: 24px 0;
+}
+
+.legal-card__title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.legal-card__row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+.legal-card__row:last-child { border-bottom: none; }
+
+.legal-card__row dt {
+    color: var(--text-muted);
+}
+
+.legal-card__row dd {
+    color: var(--text);
+    word-break: break-word;
+}
+
+.legal-card__row dd em.placeholder {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.legal-callout {
+    background: var(--bg-deep);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 0 12px 12px 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 16px 0 24px;
+}
+
+/* Кнопки контактов на feedback.html */
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.contact-btn--primary {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+}
+
+.contact-btn--primary:hover {
+    background: var(--dark-soft);
+    color: var(--white);
+    border-color: var(--dark-soft);
+}
+
+/* ===== FOOTER ===== */
+.legal-footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-deep);
+    padding: 40px 24px;
+}
+
+.legal-footer__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.legal-footer__logo {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+}
+
+.legal-footer__logo span {
+    color: var(--accent-dark);
+    font-style: italic;
+}
+
+.legal-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 0.9rem;
+}
+
+.legal-footer__links a {
+    color: var(--text-muted);
+}
+
+.legal-footer__links a:hover {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+.legal-footer__copy {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    width: 100%;
+    margin-top: 16px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+    .legal-content { padding: 40px 20px 64px; }
+    .legal-card { padding: 22px 20px; }
+    .legal-card__row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .legal-footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .legal-footer__links { gap: 12px 18px; }
+    .legal-nav__inner { padding: 14px 20px; }
+}
